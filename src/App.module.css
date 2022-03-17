@@ -1,0 +1,10 @@
+.title {
+  text-align: center;
+}
+
+.main {
+  max-width: 500px;
+  padding: 1rem;
+  margin: 0 auto;
+  border: 1px solid;
+}

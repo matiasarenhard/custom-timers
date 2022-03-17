@@ -1,10 +1,10 @@
 import TimerForm from "./TimerForm";
-import "./App.css";
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <main>
-      <h1>Timers</h1> 
+    <main className={styles.main}> 
+      <h1 className={styles.title}>Timers</h1> 
       <TimerForm />
       
     </main>
