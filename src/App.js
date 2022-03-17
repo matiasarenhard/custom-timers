@@ -1,4 +1,4 @@
-import TimerForm from "./TimerForm";
+import TimerForm from "./components/TimerForm";
 import styles from "./App.module.css";
 
 function App() {
