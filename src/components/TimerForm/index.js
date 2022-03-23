@@ -1,13 +1,16 @@
 import styles from "./TimerForm.module.css";
 
-const TimerForm = () => {
-    const handleFormSubmit = (event) => { 
+const TimerForm = ({ setTimer }) => {
+    const handleFormSubmit = (event) => {
         event.preventDefault();
 
         const form = event.target;
         const newTimer = Object.fromEntries(new FormData(form));
+        newTimer.id = Date.now();
         newTimer.duration = parseInt(newTimer.duration);
         
+        setTimer((timers) => [...timers, newTimer]);
+        form.reset();
     };
 
     return (
