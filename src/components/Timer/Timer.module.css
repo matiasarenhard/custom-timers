@@ -16,6 +16,9 @@
 
 .details {
   margin-top: 0.5;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .timeLeft {
@@ -23,10 +26,22 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   text-align: center;
+  flex-grow: 1;
 }
 
 .timeLeft span {
   font-family: "VT323", monospace;
   font-size: 2rem;
   color: #777;
+}
+
+.button {
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.start {
+  padding: 0.5rem 0.75rem;
+  background-color: forestgreen;
 }
