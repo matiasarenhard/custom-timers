@@ -1,0 +1,32 @@
+.timer {
+  width: 80%;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 2px;
+  border-radius: 5px;
+}
+
+.header {
+}
+
+.initialDuration {
+  font-weight: 100;
+  color: #999;
+}
+
+.details {
+  margin-top: 0.5;
+}
+
+.timeLeft {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.timeLeft span {
+  font-family: "VT323", monospace;
+  font-size: 2rem;
+  color: #777;
+}

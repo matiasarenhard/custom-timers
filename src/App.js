@@ -1,4 +1,5 @@
 import TimerForm from "./components/TimerForm";
+import Timer from "./components/Timer";
 import styles from "./App.module.css";
 import { useState } from "react";
 
@@ -15,7 +16,7 @@ function App() {
       
       <div className={styles.timers}>
         {timers.map((timer) => (
-          <h3 key={timer.id}>{timer.name}</h3>
+          <Timer key={timer.id} {...timer}/>
         ))}
 
       </div>
