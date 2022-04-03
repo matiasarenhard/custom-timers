@@ -15,6 +15,11 @@ const Timer = ({ id, name, duration, deleteTimer }) => {
         
     }, [timeLeft, intervalId]);
     
+    useEffect(() => { 
+        return () => { 
+            clearInterval(intervalId);
+        };
+    }, [intervalId]);
 
     const handleStartClick = () => {
         setRunning(true);
