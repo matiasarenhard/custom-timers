@@ -2,7 +2,7 @@ import styles from "./Timer.module.css";
 import { useState, useEffect } from "react";
 import Loading from "../Loading";
 
-const Timer = ({ name, duration }) => {
+const Timer = ({ id, name, duration, deleteTimer }) => {
     const [timeLeft, setTimeLeft] = useState(duration);
     const [intervalId, setIntervalId] = useState(null);
     const [running, setRunning] = useState(false);
@@ -26,6 +26,12 @@ const Timer = ({ name, duration }) => {
         setIntervalId(id);
     };
 
+    const handleDeleteClick = () => {
+        if (window.confirm(`You whant delete "${name}"?`)) { 
+            deleteTimer(id);
+        }
+    };
+
     return (
         <section className={styles.timer}>
             <header className={styles.header}>
@@ -33,6 +39,7 @@ const Timer = ({ name, duration }) => {
                     {name}
                     <span className={styles.initialDuration}>({duration})</span>
                 </h2>
+                <button className={`${styles.button} ${styles.delete}`} onClick={handleDeleteClick}>&#x2715;</button>
             </header>
 
             <div className={styles.details}>
