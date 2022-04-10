@@ -1,6 +1,10 @@
+import { useRef } from "react";
+
 import styles from "./TimerForm.module.css";
 
 const TimerForm = ({ setTimer }) => {
+    const nameInputRef = useRef(null);
+
     const handleFormSubmit = (event) => {
         event.preventDefault();
 
@@ -11,11 +15,12 @@ const TimerForm = ({ setTimer }) => {
         
         setTimer((timers) => [...timers, newTimer]);
         form.reset();
+        nameInputRef.current.focus();
     };
 
     return (
         <form className={styles.form} onSubmit={handleFormSubmit}>
-            <input type="text" className={styles.input} name="name" placeholder="Name" defaultValue="test" />
+            <input ref={nameInputRef} type="text" className={styles.input} name="name" placeholder="Name" defaultValue="test" />
             <input type="number" className={styles.input} name="duration" placeholder="Duration (seconds)" min="1" defaultValue={2}
             />
             
